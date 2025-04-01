@@ -1,0 +1,33 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Environment
+.env
+.env.*
+
+# Logs
+logs/
+*.log
+
+# Node
+node_modules/
+dist/
+
+
+# Alembic / Flask-Migrate
+migrations/versions/*
+!migrations/versions/.gitkeep
+migrations/**/__pycache__/
+
+# Redis
+redis-data/*
+!redis-data/.gitkeep
+!redis-data/README.md
+
+# Instance config and database
+instance/*
+!instance/.gitkeep
+!instance/README.md
+
