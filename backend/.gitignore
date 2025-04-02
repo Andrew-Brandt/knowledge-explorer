@@ -6,6 +6,7 @@ __pycache__/
 # Environment
 .env
 .env.*
+!.env.example
 
 # Logs
 logs/
@@ -30,4 +31,8 @@ redis-data/*
 instance/*
 !instance/.gitkeep
 !instance/README.md
+
+# PyCharm IDE settings
+.idea/
+
 
