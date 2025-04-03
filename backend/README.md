@@ -136,4 +136,10 @@ flask db migrate -m "describe your change here"
 flask db upgrade
 ```
 
-> `alembic.ini` is in the `migrations/` folder and root due to inconsistencies in alembic and flask documentation.
+`alembic.ini` is in the `migrations/` folder and root due to inconsistencies in alembic and flask documentation.
+
+### Post-Deployment: Run DB Migrations in Docker
+Once your containers are running, you need to apply the database schema using Flask-Migrate:
+```bash
+docker exec -it backend flask db upgrade
+```

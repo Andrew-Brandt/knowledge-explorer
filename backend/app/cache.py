@@ -17,6 +17,7 @@ def get_from_cache(key: str):
 def store_in_cache(key: str, value, expiration: int = 86400):
     try:
         redis_client.set(key, value, ex=expiration)
+        logger.info(f"Redis SET successful for key: {key}")
     except redis.exceptions.RedisError as e:
         logger.error(f"Redis SET failed for key '{key}': {e}")
 
