@@ -34,25 +34,25 @@ const TopicCard = ({
 
   return (
     <div className="rounded-xl shadow-md px-4 py-3 bg-white dark:bg-gray-800 transition">
-      <div className="flex flex-wrap sm:flex-nowrap justify-between items-start gap-4 mt-3 mb-2">
-        <h3 className="text-xl font-semibold flex-1">
+      <div className="flex flex-wrap justify-between items-start gap-3 mt-3 mb-2">
+        <h3 className="text-lg sm:text-xl font-semibold flex-1">
           {index + 1}. {item || "[Untitled]"}
         </h3>
 
         {!isMain && (
-          <div className="flex gap-2 min-w-fit">
+          <div className="flex flex-wrap gap-2 min-w-fit">
             <button
               onClick={() => toggleSummary(item)}
-              className="text-sm font-medium px-4 py-2 h-10 rounded bg-light-primary hover:bg-light-accent dark:bg-dark-primary dark:hover:bg-dark-accent text-white transition"
+              className="text-sm sm:text-base font-medium px-3 py-2 rounded bg-light-primary hover:bg-light-accent dark:bg-dark-primary dark:hover:bg-dark-accent text-white transition"
             >
-              {isExpanded ? "Collapse Summary" : "Click to Read Summary"}
+              {isExpanded ? "Collapse Summary" : "Read Summary"}
             </button>
 
             <button
               onClick={() => handleExplore(item)}
-              className="text-sm font-medium px-4 py-2 h-10 rounded bg-emerald-600 hover:bg-emerald-700 text-white transition"
+              className="text-sm sm:text-base font-medium px-3 py-2 rounded bg-emerald-600 hover:bg-emerald-700 text-white transition"
             >
-              Explore Topic
+              Explore
             </button>
           </div>
         )}
@@ -85,3 +85,4 @@ const TopicCard = ({
 };
 
 export default TopicCard;
+

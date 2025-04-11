@@ -17,15 +17,19 @@ const Controls = ({
   );
 
   return (
-    <section className="max-w-3xl mx-auto px-4 flex flex-col sm:flex-row items-center gap-3 pb-4">
+    <section className="max-w-3xl mx-auto px-4 flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-3 pb-4">
       <div className="relative w-full sm:flex-1">
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => {if (e.key === "Enter" && !loading) onSearch();}}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && !loading) {
+              onSearch();
+            }
+          }}
           placeholder="Choose your starting point…"
-          className="w-full border px-4 py-3 rounded-lg bg-white dark:bg-gray-800 dark:text-white dark:border-gray-600 focus:outline-none"
+          className="w-full border px-4 py-3 rounded-lg bg-white dark:bg-gray-800 dark:text-white dark:border-gray-600 focus:outline-none text-sm sm:text-base"
         />
 
         {input.length > 0 && filtered.length > 0 && !loading && (
@@ -46,7 +50,7 @@ const Controls = ({
       <select
         value={level}
         onChange={(e) => setLevel(e.target.value)}
-        className="border px-4 py-3 rounded-lg bg-white dark:bg-gray-800 dark:text-white dark:border-gray-600"
+        className="border px-3 py-2 rounded-lg bg-white dark:bg-gray-800 dark:text-white dark:border-gray-600 text-sm sm:text-base"
       >
         <option value="basic">Basic</option>
         <option value="intermediate">Intermediate</option>
@@ -56,7 +60,7 @@ const Controls = ({
       <button
         onClick={loading ? null : onSearch}
         disabled={loading}
-        className={`w-[110px] justify-center px-5 py-3 rounded-lg font-medium h-[48px] flex items-center gap-2 transition ${
+        className={`justify-center px-4 py-3 rounded-lg font-medium flex items-center gap-2 transition text-sm sm:text-base ${
           loading
             ? "bg-gray-400 cursor-not-allowed text-white"
             : "text-white bg-light-primary hover:bg-light-accent dark:bg-dark-primary dark:hover:bg-dark-accent"
@@ -84,3 +88,4 @@ const Controls = ({
 };
 
 export default Controls;
+
